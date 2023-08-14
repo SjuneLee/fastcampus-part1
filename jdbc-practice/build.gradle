@@ -2,19 +2,21 @@ plugins {
     id 'java'
 }
 
-group = 'org.example'
-version = '1.0-SNAPSHOT'
+group 'org.example'
+version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation('com.zaxxer:hikariCP:5.0.1')
+    implementation('com.zaxxer:HikariCP:5.0.1')
     implementation('org.springframework:spring-jdbc:5.3.22')
 
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation('ch.qos.logback:logback-classic:1.2.11')
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 
     testImplementation('org.assertj:assertj-core:3.22.0')
 
